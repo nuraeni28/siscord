@@ -43,9 +43,12 @@ var socket = io();
             let content = `<p><b>${name}</b> ${status} the chat</p>`;
             div.innerHTML = content;
             chatBox.appendChild(div);
-        //    window.scrollTo(0, document.body.scrollHeight);
+        // window.scrollTo(0, document.body.scrollHeight);
            
         }
+        socket.on("user-disconnected",(user)=>{
+                userJoinLeft(user,'left');
+          });
 
         input.addEventListener('click', (e)=> {
                 e.preventDefault();
@@ -142,9 +145,7 @@ var socket = io();
 //       window.scrollTo(0, document.body.scrollHeight);
 //   });
   
-//   socket.on("user-disconnected",(user)=>{
-//         userJoinLeft(user,'left');
-//   });
+
 // //   let nama = window.localStorage.getItem('name');
 // //   let user = `<div class="chat outgoing">
 // //   <div class="details">

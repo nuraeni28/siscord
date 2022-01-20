@@ -26,8 +26,9 @@ io.on('connection', (socket) => {
        io.emit ('user-connected',username);
         console.log(connections);
     })
-
-
+    socket.on('message',(data)=>{
+        socket.broadcast.emit("message",{user:data.user, message:data.message});
+    })
     socket.on('disconnect',() =>{
         io.emit('user-disconnected', user=connections[socket.id]);
         delete  connections[socket.id]
@@ -35,9 +36,7 @@ io.on('connection', (socket) => {
         //console.log("Disconnect : %s sockets terputus", connections.length);
       
     });
-    socket.on('message',(data)=>{
-        socket.broadcast.emit("message",{user:data.user, message:data.message});
-    })
+    
     // socket.on('sendMessage',(msg)=>{
     //     console.log(msg);
     //     socket.broadcast.emit('sendToAll');
