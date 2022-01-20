@@ -1,0 +1,17 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "aplikasi chat",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Nuraeni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "nodemon": "^2.0.15",
+    "socket.io": "*"
+  }
+}
