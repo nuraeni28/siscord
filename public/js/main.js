@@ -1,10 +1,6 @@
 var socket = io();
         var chatForm = document.getElementById('chatForm');
         var teksPesan = document.querySelector('#teksPesan');  
-        var pesan = document.querySelector('.pesan');
-        var incoming = document.querySelector('.incoming');
-        var nameUser = document.querySelectorAll('.name_user');
-        // var name= document.getElementById('name');
         var userJoin = document.querySelector('.user-join');
         var chatBox = document.querySelector('.chat-box');
         var input = document.querySelector('#input');
